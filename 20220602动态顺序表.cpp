@@ -53,6 +53,21 @@ bool deleteList(int i,SqList &L,elemType e)
     return true;
 }
 
+elemType getElem(SqList &L,int i ){
+    return L.data[i-1];
+}
+
+int localElem(SqList &L,elemType e){
+    for (int i = 0; i < MAX_SIZE; i++)
+    {
+        if (L.data[i].name == e.name)
+        {
+            return i+1;
+        }
+    }
+    return 0;
+    
+}
 int main(){
     SqList L;
     elemType e;
