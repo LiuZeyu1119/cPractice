@@ -90,6 +90,7 @@ bool Empty(LinkList L){
         return true;
     }else{
         return false;
+        
     }
 }
 
