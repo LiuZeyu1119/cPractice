@@ -17,6 +17,7 @@ bool initList(DLinkList &L){
     return true;
 }
 
+
 bool insertNode(DNode *p,DNode *s){
     if(p==NULL||s==NULL)return false;
     s->next = p->next;
@@ -25,6 +26,17 @@ bool insertNode(DNode *p,DNode *s){
     }
     s->prior = p;
     p->next = s;
+    return true;
+}
+
+bool deleteNode(DNode *p){
+    if(p == NULL) return false;
+    DNode *q = p->next;
+    if(q == NULL) return false;
+    p->next=q->next;
+    if(q->next!=NULL)
+        q->next->prior = p;
+    free(q);
     return true;
 }
 
